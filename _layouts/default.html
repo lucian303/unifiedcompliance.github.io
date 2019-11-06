@@ -9,14 +9,17 @@
 </head>
 <body>
 	<header>
-		<img src="images/mast-logo.png" class="brand-logo" />
+		<div class="container">
+			<img src="images/mast-logo.png" class="brand-logo" />
+		</div>
 		<nav>
-			<ul>
-				<li><a href="docs.html">Docs</a></li>
-				<li><a href="#link">Downloads</a></li>
-				<li><a href="#link">Contribute</a></li>
-				<li><a href="#link">Agreements &amp; License</a></li>
-			</ul>
+			<div class="container">
+				<ul>
+					{% for nav in site.main_navigation %}
+					<li><a href="{{ nav[1] }}">{{ nav[0] }}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
 		</nav>
 	</header>
 	

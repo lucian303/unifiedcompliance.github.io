@@ -1,4 +1,8 @@
 title: "Unified Compliance Framework"
-navigation:
-    "About": "index.html"
-    "Docs": "docs.html"
+main_navigation:
+    Home: "index.html"
+    About: "https://www.unifiedcompliance.com/company/"
+    Developer Docs: "developer.html"
+    Education: "education.html"
+    Join Us on Slack: "mailto:dcougias@unifiedcompliance.com"
+    Common Controls Hub: "https://commoncontrolshub.com/overview/"
