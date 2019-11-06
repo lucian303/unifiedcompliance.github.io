@@ -1,0 +1,35 @@
+html {
+	font-size: 16px;
+}
+
+body {
+	font: $font-weight-light 1rem/#{1.2} $font-family-sans-serif;
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1.2;
+	font-weight: $font-weight-light;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+	transition: all .25s ease;
+	
+	footer &,
+	main & {
+		color: $primary;
+		font-weight: $font-weight-normal;
+		
+		
+		&:hover,
+		&:focus {
+			color: #000;
+		}
+	}
+}
+
+ul {
+	list-style-type: square;
+}

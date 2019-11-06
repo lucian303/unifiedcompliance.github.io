@@ -1,4 +1,9 @@
-_site/
-.sass-cache/
-.jekyll-cache/
+*.css.map
+*.log
+.idea
+.jekyll-cache
 .jekyll-metadata
+.sass-cache
+_site
+bower_components
+node_modules
