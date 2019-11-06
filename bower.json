@@ -1,0 +1,19 @@
+{
+	"name": "unifiedcompliance.github.io",
+	"homepage": "https://unifiedcompliance.github.io",
+	"authors": [
+		"Levy Online <webmaster@levyonline.com>"
+	],
+	"license": "MIT",
+	"private": true,
+	"dependencies": {
+		"bootstrap": "4.3.1"
+	},
+	"overrides": {
+		"bootstrap": {
+			"main": [
+				"./scss/bootstrap.scss"
+			]
+		}
+	}
+}
