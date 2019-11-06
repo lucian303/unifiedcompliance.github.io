@@ -6,3 +6,9 @@ main_navigation:
     Education: "education.html"
     Join Us on Slack: "mailto:dcougias@unifiedcompliance.com"
     Common Controls Hub: "https://commoncontrolshub.com/overview/"
+
+exclude:
+    - .idea
+    - bower_components
+    - node_modules
+    - sass
