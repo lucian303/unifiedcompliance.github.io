@@ -1,7 +1,7 @@
-html {
-	font-size: 16px;
-}
+@import "variables";
 
-body {
-	font: light 1rem 'Open Sans', sans-serif;
-}
+@import "../bower_components/bootstrap/scss/bootstrap-grid";
+
+@import "typography";
+@import "global";
+@import "header";
