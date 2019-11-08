@@ -170,6 +170,34 @@ $element-size: 70px;
 			box-shadow: 0 8px 8px 0 rgba(#000, 0.15);
 			padding: 1rem;
 			transform: translateX(-50%);
+			
+			&.dark-blue {
+				border-color: $dark-blue;
+			}
+			
+			&.blue {
+				border-color: $blue;
+			}
+			
+			&.grey {
+				border-color: $grey;
+			}
+			
+			&.orange {
+				border-color: $orange;
+			}
+			
+			&.yellow {
+				border-color: $yellow;
+			}
+			
+			&.turquoise {
+				border-color: $turquoise;
+			}
+			
+			&.purple {
+				border-color: $purple;
+			}
 		}
 		
 		h3 {
@@ -185,14 +213,6 @@ $element-size: 70px;
 			&:last-child {
 				margin-bottom: 0;
 			}
-		}
-		
-		&.dark-blue {
-			border-color: $dark-blue;
-		}
-		
-		&.blue {
-			border-color: $blue;
 		}
 	}
 }
