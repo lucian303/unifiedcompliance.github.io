@@ -70,12 +70,12 @@ $element-size: 70px;
 	
 	.vline-1 {
 		left: ($element-size * 3) + ($grid-gutter-width * 2) + ($grid-gutter-width / 2);
-		height: ($element-size * 2) + ( $grid-gutter-width * 2);
+		height: ($element-size * 2) + ( $grid-gutter-width * 2) + 1;
 	}
 	
 	.vline-2 {
 		left: ($element-size * 4) + ($grid-gutter-width * 3) + ($grid-gutter-width / 2);
-		height: ($element-size * 5) + ( $grid-gutter-width * 5);
+		height: ($element-size * 5) + ( $grid-gutter-width * 5) + 1;
 	}
 	
 	.element {
