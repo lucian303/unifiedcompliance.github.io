@@ -7,6 +7,10 @@ main_navigation:
     Join Us on Slack: "mailto:dcougias@unifiedcompliance.com"
     Common Controls Hub: "https://commoncontrolshub.com/overview/"
 
+sass:
+    sass_dir: _sass
+    style: compresed
+
 exclude:
     - .idea
     - bower_components
