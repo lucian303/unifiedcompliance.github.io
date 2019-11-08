@@ -11,7 +11,7 @@ main {
 	background: url('../images/bg_img_full.png') top center no-repeat #fff;
 	
 	.container {
-		padding-top: 2rem;
-		padding-bottom: 2rem;
+		padding-top: $grid-gutter-width;
+		padding-bottom: $grid-gutter-width;
 	}
 }
