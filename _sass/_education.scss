@@ -9,13 +9,14 @@ $element-size: 70px;
 	max-width: ($element-size * 7) + ($grid-gutter-width * 6);
 	
 	.row {
-		& + .row {
-			margin-top: $grid-gutter-width;
-		}
-		
 		> .col {
-			// SVG width + grid gutter width
-			max-width: ($element-size + $grid-gutter-width);
+			overflow: hidden;
+			padding-top: ($grid-gutter-width / 2);
+			padding-bottom: ($grid-gutter-width / 2);
+			
+			// SVG size + grid gutter width
+			width: ($element-size + $grid-gutter-width);
+			height: ($element-size + $grid-gutter-width);
 		}
 	}
 	
@@ -30,7 +31,7 @@ $element-size: 70px;
 	
 	.border-left,
 	.border-right {
-		width: ($grid-gutter-width / 2);
+		width: $grid-gutter-width;
 		height: 1px;
 		top: 50%;
 	}
@@ -38,7 +39,7 @@ $element-size: 70px;
 	.border-top,
 	.border-bottom {
 		width: 1px;
-		height: ($grid-gutter-width / 2);
+		height: $grid-gutter-width;
 		left: 50%;
 	}
 	
@@ -64,7 +65,7 @@ $element-size: 70px;
 		position: absolute;
 		background: #000;
 		transform: translateY(-1px);
-		top: ($element-size / 2) + 1;
+		top: ($element-size / 2) + ($grid-gutter-width / 2) + 1;
 	}
 	
 	.vline-1 {
