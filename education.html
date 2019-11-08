@@ -82,13 +82,13 @@ elements:
       description: Compliance Dictionary gives the people writing compliance guidelines and those tasked with understanding and implementing them, a way to efficiently check their language choices and standardize terminology.
       color: red
       image: ../assets/images/elements/Di.svg
-      right: true
+      right: half
     - title:
     - title: Roles
       description: A word or phrase that represents the function an individual, process, organization, etc. is supposed to achieve.
       color: red
       image: ../assets/images/elements/Ro.svg
-      left: true
+      left: half
     - title:
     - title:
   - row:
@@ -101,7 +101,7 @@ elements:
       description: The activities and actions an organization must track to comply with various controls.
       color: red
       image: ../assets/images/elements/Ev.svg
-      left: true
+      left: half
       right: true
     - title: Triggering Events
       description: A unique activity within a given process or state that causes an event or situation to happen.
@@ -119,7 +119,7 @@ elements:
       description: A systematic, independent and documented process for obtaining audit evidence and evaluating it objectively to determine the extent to which the audit criteria are fulfilled.
       color: red
       image: ../assets/images/elements/Au.svg
-      left: true
+      left: half
     - title:
     - title:
   - row:
@@ -184,16 +184,32 @@ elements:
 			{% if element.title %}
 			<div class="element" data-color="{{ element.color }}" style="background-image: url('{{ element.image }}');">
 				{% if element.left %}
-				<span class="border-left"></span>
+					{% if element.left == "half" %}
+					<span class="border-left-half"></span>
+					{% else %}
+					<span class="border-left"></span>
+					{% endif %}
 				{% endif %}
 				{% if element.right %}
-				<span class="border-right"></span>
+					{% if element.right == "half" %}
+					<span class="border-right-half"></span>
+					{% else %}
+					<span class="border-right"></span>
+					{% endif %}
 				{% endif %}
 				{% if element.bottom %}
-				<span class="border-bottom"></span>
+					{% if element.bottom == "half" %}
+					<span class="border-bottom-half"></span>
+					{% else %}
+					<span class="border-bottom"></span>
+					{% endif %}
 				{% endif %}
 				{% if element.top %}
-				<span class="border-top"></span>
+					{% if element.top == "half" %}
+					<span class="border-top-half"></span>
+					{% else %}
+					<span class="border-top"></span>
+					{% endif %}
 				{% endif %}
 				<div class="popover {{ element.color }}">
 					<h3>{{ element.title }}</h3>
