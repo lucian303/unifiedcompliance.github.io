@@ -10,7 +10,7 @@ $element-size: 70px;
 	
 	.row {
 		> .col {
-			overflow: hidden;
+			//overflow: hidden;
 			padding-top: ($grid-gutter-width / 2);
 			padding-bottom: ($grid-gutter-width / 2);
 			
@@ -86,21 +86,27 @@ $element-size: 70px;
 		height: $element-size;
 		position: relative;
 		width: $element-size;
+		cursor: pointer;
 		
 		.popover {
 			border-radius: 4px;
 			display: none;
-			left: 0;
+			left: 50%;
 			position: absolute;
-			top: 0;
+			top: 100%;
 			width: 320px;
-			border-top: 3px solid red;
-			box-shadow: 4px 8px 10px 0 rgba(#000, 0.2);
+			border-width: 3px 0 0 0;
+			border-color: $primary;
+			box-shadow: 0 8px 8px 0 rgba(#000, 0.15);
+			padding: 1em;
+			transform: translateX(-50%);
 		}
 		
 		h3 {
 			font-weight: $font-weight-normal;
 			margin-top: 0;
+			margin-bottom: 1rem;
+			font-size: $h4-font-size;
 		}
 		
 		p {

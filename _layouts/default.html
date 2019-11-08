@@ -38,5 +38,25 @@
 			</p>
 		</div>
 	</footer>
+	
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script>
+		(function( $ ) {
+			$( '.element-container .element' ).on( 'click', function() {
+				// Hide all element popovers
+				$( '.element-container .element .popover' ).fadeOut( 'fast' );
+				$( this ).find( '.popover' ).fadeToggle( 'fast' );
+			} );
+			
+			$( document ).on( 'click', function( e ) {
+				var target = $( e.target );
+				
+				if( !target.closest( '.element-container' ).length ) {
+					// Hide all element popovers
+					$( '.element-container .element .popover' ).fadeOut( 'fast' );
+				}
+			} );
+		})( jQuery );
+	</script>
 </body>
 </html>
