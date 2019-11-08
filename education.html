@@ -1,14 +1,107 @@
 ---
 layout: default
 title: Education
+elements:
+  - title: Issuers
+    description: The harmonized title the UCF team has given all those who either publish or promulgate authority documents.
+    color: red
+    link: https://www.unifiedcompliance.com/education/issuers/
+  - title: Authority Documents
+    description: Statutes, regulations, directives, principles, standards, guidelines, best practices, policies, and procedures.
+    color: red
+    link: https://www.unifiedcompliance.com/authority-documents/
+  - title: Citations
+    description: A passage or expression in a document that is quoted or cited.
+    color: red
+    link: https://www.unifiedcompliance.com/education/citations/
+  - title: Common Controls
+    description: The specific steps or actions within a compliance mandate that must be met to fulfill a compliance requirement. Common Controls harmonize wording across Authority Documents so you can compare Authority Documents or track your compliance status.
+    color: red
+  - title: Assets
+    description: A service or thing owned by an organization or person that falls under the purview of an Authority Document's controls either because of its value or its configuration properties.
+    color: red
+  - title: Configuration Items
+    description: A part of an asset specifically called out during the audit process.
+    color: red
+  - title: Configuration Methods
+    description: An object that can be used to modify software functionality.
+    color: red
+  - title: Acronyms
+    description: An abbreviation formed from the initial letters of words in a phrase.
+    color: red
+  - title: Metrics
+    description: A modifiable element within a Configurable Item that can affect performance and system function.
+    color: red
+  - title: cDocs
+    description: A compliance document comprised of controls within an organization, such as a checklist, framework, plan, policy, standard, procedure, template.
+    color: red
+  - title: Vendors
+    description: The organization that creates an Asset.
+    color: red
+  - title: Dictionary
+    description: Compliance Dictionary gives the people writing compliance guidelines and those tasked with understanding and implementing them, a way to efficiently check their language choices and standardize terminology.
+    color: red
+  - title: Roles
+    description: A word or phrase that represents the function an individual, process, organization, etc. is supposed to achieve.
+    color: red
+  - title: Events
+    description: The activities and actions an organization must track to comply with various controls.
+    color: red
+  - title: Triggering Events
+    description: A unique activity within a given process or state that causes an event or situation to happen.
+    color: red
+  - title: Audit
+    description: A systematic, independent and documented process for obtaining audit evidence and evaluating it objectively to determine the extent to which the audit criteria are fulfilled.
+    color: red
+  - title: Organization
+    description: A named organized body of people with a particular purpose, especially a business, society, association, etc. For generic, unnamed, organizations see Group designator.
+    color: red
+  - title: Groups
+    description: A division within an organization or a formation of individuals outside an organization. A generic, unnamed organization.
+    color: red
+  - title: Organization Functions
+    description: The high level administrative departments of an organization.
+    color: red
+  - title: Organization Tasks
+    description: An individual process or task and organization performs.
+    color: red
+  - title: Record Category
+    description: A class, grouping, or set of records.
+    color: red
+  - title: Record Examples
+    description: An individual record within a Record Category.
+    color: red
+  - title: Data Contents
+    description: A field within a record.
+    color: red
 ---
 
 <h1>Education</h1>
 <h2>How the UCF Works</h2>
 <p>Nobody thinks about compliance frameworks in terms of modularity – except the Unified Compliance team.</p>
-<p>This is an "artist view" of the Unified Compliance Framework. It is built out as a suite of compliance <em>elements</em>, each of which perform a specific function to aid you in organizing your compliance content, interpreting your compliance content, or auditing your compliance content. Because the UCF is element-based, it can be rearranged or extended as needed.</p>
+<p>This is an "artist view" of the Unified Compliance Framework. It is built out as a suite of compliance
+	<em>elements</em>, each of which perform a specific function to aid you in organizing your compliance content, interpreting your compliance content, or auditing your compliance content. Because the UCF is element-based, it can be rearranged or extended as needed.
+</p>
 <p><em>Hover and click the elements to learn more:</em></p>
-[graphic]
+
+<div class="element-container">
+	{% for element in page.elements %}
+	<div class="element" data-color="{{ element.color }}">
+		<div class="popover {{ element.color }}">
+			<h3>{{ element.title }}</h3>
+			<p>{{ element.description }}</p>
+			{% if element.link %}
+			<p>
+				<a href="{{ element.link }}" target="_blank">
+					Learn More
+				</a>
+			</p>
+			{% endif %}
+		</div>
+	</div>
+	{% endfor %}
+</div>
+
 <h2>Why have a framework at all?</h2>
 <p>A framework is an extensible structure for describing a set of concepts, methods, and technologies as an integrated set of policies and procedures designed to assist organizations to achieve their goals and objectives. Frameworks have become a necessary means to distill and harmonize the various controls forced upon us because of the increasing number of regulatory guidelines burdening today’s organizations. It is not uncommon for a single mid-sized organization to fall under Gramm-Leach-Bliley, HIPAA, PCI-DSS, and multiple state and international privacy regulations. We covered the three steps you need to comply above. What a framework allows you to do to is to add one more step; de-duplication of effort. Any organization that falls under multiple regulatory guidelines will fall prey to overlapping Mandates (how many ways can you say “protect the information”?). Your compliance framework should not only cover how to organize your Authority Documents and interpret their Mandates, it should also provide a methodology for de-duplication of those Mandates as well as provide a methodology to add or clarify audit questions when they are unclear or missing. Therefore, a compliance framework is the structure you build around your compliance program so that you</p>
 <ol>
