@@ -5,6 +5,9 @@ $element-size: 70px;
 	position: relative;
 	margin: $grid-gutter-width auto;
 	
+	// Number of elements in row + space in between them
+	max-width: ($element-size * 7) + ($grid-gutter-width * 6);
+	
 	.row {
 		& + .row {
 			margin-top: $grid-gutter-width;
