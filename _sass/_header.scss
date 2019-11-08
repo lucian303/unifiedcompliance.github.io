@@ -43,7 +43,7 @@ header {
 				position: absolute;
 				left: 0;
 				bottom: -.5em;
-				transition: all .25s ease;
+				transition: $transition-base;
 			}
 			
 			&:hover,
