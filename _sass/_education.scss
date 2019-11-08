@@ -1,0 +1,25 @@
+.element-container {
+	.element {
+		border-top: 3px solid red;
+		border-radius: 4px;
+		padding: 1em;
+		background: #fff;
+		box-shadow: 4px 8px 10px 0 rgba(#000, 0.31);
+		
+		h3 {
+			font-weight: $font-weight-normal;
+		}
+		
+		p {
+			font-size: .875rem;
+		}
+		
+		&.dark-blue {
+			border-color: $dark-blue;
+		}
+		
+		&.blue {
+			border-color: $blue;
+		}
+	}
+}
