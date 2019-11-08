@@ -5,12 +5,12 @@
 	<title>{{ site.title }} | {{ page.title }}</title>
 	
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap" rel="stylesheet">
-	<link href="styles/main.css" rel="stylesheet" type="text/css" />
+	<link href="assets/styles/main.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<header>
 		<div class="container">
-			<img src="images/mast-logo.png" class="brand-logo" />
+			<img src="assets/images/mast-logo.png" class="brand-logo" />
 		</div>
 		<nav>
 			<div class="container">
@@ -38,5 +38,35 @@
 			</p>
 		</div>
 	</footer>
+	
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script>
+		(function( $ ) {
+			var hideAllElementPopovers = function() {
+				$( '.element-container .element' )
+					.removeClass( 'inactive' )
+					.removeClass( 'active' )
+					.find( '.popover' ).hide();
+			};
+			
+			$( '.element-container .element' ).on( 'click', function() {
+				hideAllElementPopovers();
+				$( '.element-container .element' )
+					.addClass( 'inactive' );
+				$( this )
+					.removeClass( 'inactive' )
+					.addClass( 'active' )
+					.find( '.popover' ).fadeIn( 300 );
+			} );
+			
+			$( document ).on( 'click', function( e ) {
+				var target = $( e.target );
+				
+				if( !target.closest( '.element-container' ).length ) {
+					hideAllElementPopovers();
+				}
+			} );
+		})( jQuery );
+	</script>
 </body>
 </html>

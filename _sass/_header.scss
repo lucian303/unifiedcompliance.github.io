@@ -18,23 +18,14 @@ header {
 	
 	ul {
 		list-style: none;
-		margin: 0;
-		padding: 0;
+		margin: 0 -($grid-gutter-width / 2);
+		padding: ($grid-gutter-width / 2) 0;
 		
 		li {
 			display: inline-block;
 			vertical-align: middle;
-			padding-left: 1em;
-			padding-right: 1em;
-			
-			&:first-child {
-				border-left: 0;
-				padding-left: 0;
-			}
-			
-			&:last-child {
-				padding-right: 0;
-			}
+			padding-left: ($grid-gutter-width / 2);
+			padding-right: ($grid-gutter-width / 2);
 		}
 		
 		a {
@@ -52,7 +43,7 @@ header {
 				position: absolute;
 				left: 0;
 				bottom: -.5em;
-				transition: all .25s ease;
+				transition: $transition-base;
 			}
 			
 			&:hover,

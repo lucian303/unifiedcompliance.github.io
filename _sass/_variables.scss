@@ -1,0 +1,52 @@
+$primary: #cd1e1e;
+$secondary: #29BABD;
+
+$blue: #0e7dc0;
+$dark-blue: #0d5d84;
+$grey: #7e888c;
+$orange: #f17023;
+$purple: #3c507c;
+$turquoise: #228282;
+$yellow: #e5aa25;
+
+// Typography
+
+$font-family-sans-serif: 'Open Sans', sans-serif;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+
+$font-size-base: 1rem;
+
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 1.75;
+$h3-font-size: $font-size-base * 1.5;
+$h4-font-size: $font-size-base * 1.25;
+$h5-font-size: $font-size-base * 1.125;
+$h6-font-size: $font-size-base;
+
+$headings-margin-bottom: 1.5rem;
+$paragraph-margin-bottom: 1rem;
+
+$link-decoration: none;
+$link-hover-decoration: $link-decoration;
+
+// Grid settings
+$grid-gutter-width: 40px;
+$spacer: 1rem;
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 768px,
+	md: 1200px,
+	lg: 1600px,
+	xl: 1920px
+);
+
+$container-max-widths: (
+	md: 900px,
+	lg: 1000px
+);
+
+// Bring in Bootstrap
+@import "../bower_components/bootstrap/scss/bootstrap.scss";
