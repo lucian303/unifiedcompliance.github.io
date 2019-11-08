@@ -25,7 +25,7 @@ $element-size: 70px;
 	.border-bottom {
 		background: #000;
 		position: absolute;
-		z-index: 1;
+		display: block;
 	}
 	
 	.border-left,
@@ -64,7 +64,7 @@ $element-size: 70px;
 		position: absolute;
 		background: #000;
 		transform: translateY(-1px);
-		top: ($element-size / 2);
+		top: ($element-size / 2) + 1;
 	}
 	
 	.vline-1 {
@@ -85,7 +85,6 @@ $element-size: 70px;
 		height: $element-size;
 		position: relative;
 		width: $element-size;
-		z-index: 2;
 		
 		.popover {
 			border-radius: 4px;
