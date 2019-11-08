@@ -7,85 +7,162 @@ elements:
     - title: Issuers
       description: The harmonized title the UCF team has given all those who either publish or promulgate authority documents.
       color: red
+      image: ../assets/images/elements/Is.svg
       link: https://www.unifiedcompliance.com/education/issuers/
+      right: true
     - title: Authority Documents
       description: Statutes, regulations, directives, principles, standards, guidelines, best practices, policies, and procedures.
       color: red
+      image: ../assets/images/elements/Is.svg
       link: https://www.unifiedcompliance.com/authority-documents/
+      left: true
+      right: true
     - title: Citations
       description: A passage or expression in a document that is quoted or cited.
       color: red
+      image: ../assets/images/elements/Is.svg
       link: https://www.unifiedcompliance.com/education/citations/
+      left: true
+      right: true
     - title: Common Controls
       description: The specific steps or actions within a compliance mandate that must be met to fulfill a compliance requirement. Common Controls harmonize wording across Authority Documents so you can compare Authority Documents or track your compliance status.
       color: red
+      image: ../assets/images/elements/Is.svg
+      left: true
+      right: true
+      bottom: true
     - title: Assets
       description: A service or thing owned by an organization or person that falls under the purview of an Authority Document's controls either because of its value or its configuration properties.
       color: red
+      image: ../assets/images/elements/Is.svg
+      left: true
+      right: true
     - title: Configuration Items
       description: A part of an asset specifically called out during the audit process.
       color: red
+      image: ../assets/images/elements/Is.svg
+      left: true
+      right: true
+      bottom: true
     - title: Configuration Methods
       description: An object that can be used to modify software functionality.
       color: red
+      image: ../assets/images/elements/Is.svg
+      left: true
   - row:
     columns:
+    - title:
+    - title:
     - title: Acronyms
       description: An abbreviation formed from the initial letters of words in a phrase.
       color: red
+      image: ../assets/images/elements/Is.svg
+      right: true
     - title: Metrics
       description: A modifiable element within a Configurable Item that can affect performance and system function.
       color: red
+      image: ../assets/images/elements/Is.svg
     - title: cDocs
       description: A compliance document comprised of controls within an organization, such as a checklist, framework, plan, policy, standard, procedure, template.
       color: red
+      image: ../assets/images/elements/Is.svg
+      left: true
     - title: Vendors
       description: The organization that creates an Asset.
       color: red
+      image: ../assets/images/elements/Is.svg
+      top: true
+    - title:
   - row:
     columns:
+    - title:
+    - title:
     - title: Dictionary
       description: Compliance Dictionary gives the people writing compliance guidelines and those tasked with understanding and implementing them, a way to efficiently check their language choices and standardize terminology.
       color: red
+      image: ../assets/images/elements/Is.svg
+      right: true
+    - title:
     - title: Roles
       description: A word or phrase that represents the function an individual, process, organization, etc. is supposed to achieve.
       color: red
+      image: ../assets/images/elements/Is.svg
+      left: true
+    - title:
+    - title:
   - row:
     columns:
+    - title:
+    - title:
+    - title:
+    - title:
     - title: Events
       description: The activities and actions an organization must track to comply with various controls.
       color: red
+      image: ../assets/images/elements/Is.svg
+      left: true
+      right: true
     - title: Triggering Events
       description: A unique activity within a given process or state that causes an event or situation to happen.
       color: red
+      image: ../assets/images/elements/Is.svg
+      left: true
+    - title:
   - row:
     columns:
+    - title:
+    - title:
+    - title:
+    - title:
     - title: Audit
       description: A systematic, independent and documented process for obtaining audit evidence and evaluating it objectively to determine the extent to which the audit criteria are fulfilled.
       color: red
+      image: ../assets/images/elements/Is.svg
+      left: true
+    - title:
+    - title:
   - row:
     columns:
     - title: Organization
       description: A named organized body of people with a particular purpose, especially a business, society, association, etc. For generic, unnamed, organizations see Group designator.
       color: red
+      image: ../assets/images/elements/Is.svg
+      right: true
     - title: Groups
       description: A division within an organization or a formation of individuals outside an organization. A generic, unnamed organization.
       color: red
+      image: ../assets/images/elements/Is.svg
+      left: true
+      right: true
     - title: Organization Functions
       description: The high level administrative departments of an organization.
       color: red
+      image: ../assets/images/elements/Is.svg
+      left: true
+      right: true
     - title: Organization Tasks
       description: An individual process or task and organization performs.
       color: red
+      image: ../assets/images/elements/Is.svg
+      left: true
+      right: true
     - title: Record Category
       description: A class, grouping, or set of records.
       color: red
+      image: ../assets/images/elements/Is.svg
+      left: true
+      right: true
     - title: Record Examples
       description: An individual record within a Record Category.
       color: red
+      image: ../assets/images/elements/Is.svg
+      left: true
+      right: true
     - title: Data Contents
       description: A field within a record.
       color: red
+      image: ../assets/images/elements/Is.svg
+      left: true
 ---
 
 <h1>Education</h1>
@@ -98,20 +175,36 @@ elements:
 
 <div class="element-container">
 	{% for row in page.elements %}
-	<div class="row">
+	<div class="row justify-content-center">
 		{% for element in row.columns %}
-		<div class="element col-12 col-sm" data-color="{{ element.color }}">
-			<div class="popover {{ element.color }}">
-				<h3>{{ element.title }}</h3>
-				<p>{{ element.description }}</p>
-				{% if element.link %}
-				<p>
-					<a href="{{ element.link }}" target="_blank">
-						Learn More
-					</a>
-				</p>
+		<div class="col">
+			{% if element.title %}
+			<div class="element" data-color="{{ element.color }}" style="background-image: url('{{ element.image }}');">
+				{% if element.left %}
+				<span class="border-left"></span>
 				{% endif %}
+				{% if element.right %}
+				<span class="border-right"></span>
+				{% endif %}
+				{% if element.bottom %}
+				<span class="border-bottom"></span>
+				{% endif %}
+				{% if element.top %}
+				<span class="border-top"></span>
+				{% endif %}
+				<div class="popover {{ element.color }}">
+					<h3>{{ element.title }}</h3>
+					<p>{{ element.description }}</p>
+					{% if element.link %}
+					<p>
+						<a href="{{ element.link }}" target="_blank">
+							Learn More
+						</a>
+					</p>
+					{% endif %}
+				</div>
 			</div>
+			{% endif %}
 		</div>
 		{% endfor %}
 	</div>
