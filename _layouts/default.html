@@ -44,13 +44,17 @@
 		(function( $ ) {
 			var hideAllElementPopovers = function() {
 				$( '.element-container .element' )
+					.removeClass( 'inactive' )
 					.removeClass( 'active' )
 					.find( '.popover' ).hide();
 			};
 			
 			$( '.element-container .element' ).on( 'click', function() {
 				hideAllElementPopovers();
+				$( '.element-container .element' )
+					.addClass( 'inactive' );
 				$( this )
+					.removeClass( 'inactive' )
 					.addClass( 'active' )
 					.find( '.popover' ).fadeIn( 300 );
 			} );
