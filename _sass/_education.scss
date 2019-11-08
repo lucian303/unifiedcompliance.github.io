@@ -7,12 +7,12 @@ $element-size: 70px;
 	
 	.row {
 		& + .row {
-			margin-top: ($element-size / 2);
+			margin-top: $grid-gutter-width;
 		}
 		
 		> .col {
 			// SVG width + grid gutter width
-			max-width: ($element-size + 30px);
+			max-width: ($element-size + $grid-gutter-width);
 		}
 	}
 	
@@ -27,7 +27,7 @@ $element-size: 70px;
 	
 	.border-left,
 	.border-right {
-		width: ($element-size / 4);
+		width: ($grid-gutter-width / 2);
 		height: 1px;
 		top: 50%;
 	}
@@ -35,7 +35,7 @@ $element-size: 70px;
 	.border-top,
 	.border-bottom {
 		width: 1px;
-		height: ($element-size / 4);
+		height: ($grid-gutter-width / 2);
 		left: 50%;
 	}
 	
