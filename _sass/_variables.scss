@@ -15,6 +15,8 @@ $font-weight-light: 300;
 $font-weight-normal: 400;
 
 // Grid settings
+$grid-gutter-width: 40px;
+$spacer: 1rem;
 
 $grid-breakpoints: (
 	xs: 0,
@@ -28,3 +30,6 @@ $container-max-widths: (
 	md: 900px,
 	lg: 1000px
 );
+
+// Bring in Bootstrap
+@import "../bower_components/bootstrap/scss/bootstrap.scss";
