@@ -4,6 +4,7 @@ main_navigation:
     Education: "education.html"
     Developer Docs: "https://developer.unifiedcompliance.com/"
     About: "https://www.unifiedcompliance.com/company/"
+        Contributing: "/assets/docs/character-table.xlsx"
     Join Us on Slack: "mailto:dcougias@unifiedcompliance.com"
     Common Controls Hub: "https://commoncontrolshub.com/overview/"
 
