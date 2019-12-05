@@ -1,0 +1,17 @@
+.table-characters {
+	thead {
+		td, th {
+			font-size: .8em;
+		}
+	}
+	
+	tbody {
+		td {
+			max-width: 80px;
+			
+			&:last-child {
+				max-width: unset;
+			}
+		}
+	}
+}

@@ -179,57 +179,63 @@ elements:
 	<span class="vline-2"></span>
 	<span class="vline-connector-1"></span>
 	<span class="vline-connector-2"></span>
-	{% for row in page.elements %}
 	<div class="row justify-content-center">
+	{% for row in page.elements %}
 		{% for element in row.columns %}
-		<div class="col">
+			{% assign remainder = forloop.index | mod:7 %}
 			{% if element.title %}
-			<div class="element" data-color="{{ element.color }}" style="background-image: url('{{ element.image }}');">
-				{% if element.left %}
-					{% if element.left == "half" %}
-					<span class="border-left-half"></span>
-					{% else %}
-					<span class="border-left"></span>
+			<div class="col">
+				<div class="element" data-color="{{ element.color }}" style="background-image: url('{{ element.image }}');">
+					{% if element.left %}
+						{% if element.left == "half" %}
+						<span class="border-left-half"></span>
+						{% else %}
+						<span class="border-left"></span>
+						{% endif %}
 					{% endif %}
-				{% endif %}
-				{% if element.right %}
-					{% if element.right == "half" %}
-					<span class="border-right-half"></span>
-					{% else %}
-					<span class="border-right"></span>
+					{% if element.right %}
+						{% if element.right == "half" %}
+						<span class="border-right-half"></span>
+						{% else %}
+						<span class="border-right"></span>
+						{% endif %}
 					{% endif %}
-				{% endif %}
-				{% if element.bottom %}
-					{% if element.bottom == "half" %}
-					<span class="border-bottom-half"></span>
-					{% else %}
-					<span class="border-bottom"></span>
+					{% if element.bottom %}
+						{% if element.bottom == "half" %}
+						<span class="border-bottom-half"></span>
+						{% else %}
+						<span class="border-bottom"></span>
+						{% endif %}
 					{% endif %}
-				{% endif %}
-				{% if element.top %}
-					{% if element.top == "half" %}
-					<span class="border-top-half"></span>
-					{% else %}
-					<span class="border-top"></span>
+					{% if element.top %}
+						{% if element.top == "half" %}
+						<span class="border-top-half"></span>
+						{% else %}
+						<span class="border-top"></span>
+						{% endif %}
 					{% endif %}
-				{% endif %}
-				<div class="popover {{ element.color }}">
-					<h3>{{ element.title }}</h3>
-					<p>{{ element.description }}</p>
-					{% if element.link %}
-					<p>
-						<a href="{{ element.link }}" target="_blank">
-							Learn More
-						</a>
-					</p>
-					{% endif %}
+					<div class="popover {{ element.color }}">
+						<h3>{{ element.title }}</h3>
+						<p>{{ element.description }}</p>
+						{% if element.link %}
+						<p>
+							<a href="{{ element.link }}" target="_blank">
+								Learn More
+							</a>
+						</p>
+						{% endif %}
+					</div>
 				</div>
 			</div>
+			{% else %}
+			<div class="col empty"></div>
 			{% endif %}
-		</div>
+			{% if remainder == 7 %}
+			<div class="w-100 d-none d-md-block"></div>
+			{% endif %}
 		{% endfor %}
-	</div>
 	{% endfor %}
+	</div>
 </div>
 
 <h2>Why have a framework at all?</h2>

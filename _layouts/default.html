@@ -2,7 +2,21 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{{ site.title }} | {{ page.title }}</title>
+	
+	<!-- favicon files -->
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="194x194" href="assets/images/favicon-194x194.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192x192.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#cd1e1e">
+	<meta name="msapplication-TileColor" content="#cd1e1e">
+	<meta name="msapplication-TileImage" content="assets/images/mstile-144x144.png">
+	<meta name="theme-color" content="#ffffff">
 	
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap" rel="stylesheet">
 	<link href="assets/styles/main.css" rel="stylesheet" type="text/css" />
@@ -10,17 +24,22 @@
 <body>
 	<header>
 		<div class="container">
-			<img src="assets/images/mast-logo.png" class="brand-logo" />
+			<nav class="navbar navbar-expand-md navbar-light bg-light">
+				<a class="navbar-brand" href="index.html">
+					<img src="assets/images/mast-logo.png" class="brand-logo" />
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<img src="assets/images/menu-btn.png" />
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						{% for nav in site.main_navigation %}
+						<li><a class="nav-link" href="{{ nav[1] }}">{{ nav[0] }}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+			</nav>
 		</div>
-		<nav>
-			<div class="container">
-				<ul>
-					{% for nav in site.main_navigation %}
-					<li><a href="{{ nav[1] }}">{{ nav[0] }}</a></li>
-					{% endfor %}
-				</ul>
-			</div>
-		</nav>
 	</header>
 	
 	<main>
@@ -33,13 +52,15 @@
 		<div class="container">
 			<p>
 				&copy;2019 {{ site.title }} |
-				<a href="#link">License Info</a> |
+				<a href="https://www.unifiedcompliance.com/company/" target="_blank">About</a> |
 				<a href="https://github.com/unifiedcompliance/agreements/blob/master/COPYRIGHT.md">Copyright Agreement</a>
 			</p>
 		</div>
 	</footer>
 	
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 	<script>
 		(function( $ ) {
 			var hideAllElementPopovers = function() {
@@ -47,6 +68,16 @@
 					.removeClass( 'inactive' )
 					.removeClass( 'active' )
 					.find( '.popover' ).hide();
+				
+				$( '.popover-mask' ).hide();
+			};
+			
+			var usePopoverMask = function() {
+				if( $( window ).width() < 1200 ) {
+					$( '.popover-mask' ).addClass( 'use' );
+				} else {
+					$( '.popover-mask' ).removeClass( 'use' );
+				}
 			};
 			
 			$( '.element-container .element' ).on( 'click', function() {
@@ -57,15 +88,21 @@
 					.removeClass( 'inactive' )
 					.addClass( 'active' )
 					.find( '.popover' ).fadeIn( 300 );
+				
+				$( '.popover-mask.use' ).show();
 			} );
 			
-			$( document ).on( 'click', function( e ) {
-				var target = $( e.target );
-				
-				if( !target.closest( '.element-container' ).length ) {
-					hideAllElementPopovers();
-				}
-			} );
+			$( document )
+				.ready( usePopoverMask )
+				.on( 'click', function( e ) {
+					var target = $( e.target );
+					
+					if( !target.closest( '.element-container' ).length ) {
+						hideAllElementPopovers();
+					}
+				} );
+			
+			$( window ).resize( usePopoverMask );
 		})( jQuery );
 	</script>
 </body>
