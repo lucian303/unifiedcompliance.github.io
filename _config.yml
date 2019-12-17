@@ -15,6 +15,9 @@ navigation:
         link: "/contributing"
     -   title: "Join Slack"
         link: "mailto:support@unifiedcompliace.com?subject=Please%20add%20me%20to%20Slack&body=I'd%20like%20to%20join%20your%20Slack%20discussion%20about%20the%20UCF%20API."
+    -   title: "Common Controls Hub"
+        link: "https://commoncontrolshub.com/overview/"
+        target: "_blank"
 
 sass:
     sass_dir: _sass
