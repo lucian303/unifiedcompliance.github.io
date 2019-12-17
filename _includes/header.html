@@ -1,0 +1,35 @@
+<header>
+	<div class="container">
+		<nav class="navbar navbar-expand-md navbar-light bg-light">
+			<a class="navbar-brand" href="/">
+				<img src="/assets/images/mast-logo.png" class="brand-logo" />
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<img src="/assets/images/menu-btn.png" />
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					{% for nav in site.navigation %}
+					<li class="nav-item">
+						<a class="nav-link {% if nav.sub %}dropdown-toggle{% endif %}" href="{{ nav.link }}" target="{% if nav.target %}{{ nav.target }}{% else %}_self{% endif %}"
+							{% if nav.sub %}data-toggle="dropdown" {% endif %}>
+							{{ nav.title }}
+						</a>
+						{% if nav.sub %}
+						<ul class="dropdown-menu">
+							{% for subnav in nav.sub %}
+							<li class="dropdown-item">
+								<a class="nav-link" href="{{ subnav.link }}" target="{{ subnav.target }}">
+									{{ subnav.title }}
+								</a>
+							</li>
+							{% endfor %}
+						</ul>
+						{% endif %}
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</nav>
+	</div>
+</header>
