@@ -16,6 +16,15 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
 	line-height: 1.2;
 	font-weight: $font-weight-light;
+	margin-top: 1em;
+	
+	&:first-child {
+		margin-top: 0;
+	}
+	
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 a {

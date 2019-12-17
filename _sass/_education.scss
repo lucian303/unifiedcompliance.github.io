@@ -5,20 +5,12 @@ $element-size: 70px;
 	position: relative;
 	margin: $grid-gutter-width auto;
 	
-	// Number of elements in row + space in between them
-	max-width: ($element-size * 7) + ($grid-gutter-width * 6);
+	@include media-breakpoint-up(md) {
+		// Number of elements in row + space in between them
+		max-width: ($element-size * 7) + ($grid-gutter-width * 6);
+	}
 	
 	.row {
-		// Last two rows
-		&:last-child,
-		&:nth-last-child(2) {
-			.popover {
-				top: auto;
-				bottom: 100%;
-				transform: translate(-50%, -5%);
-			}
-		}
-		
 		> .col {
 			padding-top: ($grid-gutter-width / 2);
 			padding-bottom: ($grid-gutter-width / 2);
@@ -26,6 +18,16 @@ $element-size: 70px;
 			// SVG size + grid gutter width
 			width: ($element-size + $grid-gutter-width);
 			height: ($element-size + $grid-gutter-width);
+			
+			@include media-breakpoint-down(sm) {
+				padding-left: ($grid-gutter-width / 3);
+				padding-right: ($grid-gutter-width / 3);
+				flex-grow: unset;
+				
+				&.empty {
+					display: none;
+				}
+			}
 		}
 	}
 	
@@ -40,6 +42,10 @@ $element-size: 70px;
 		background: #000;
 		position: absolute;
 		display: block;
+		
+		@include media-breakpoint-down(sm) {
+			display: none;
+		}
 	}
 	
 	.border-left,
@@ -105,6 +111,10 @@ $element-size: 70px;
 		background: #000;
 		transform: translateY(-1px);
 		top: ($element-size / 2) + ($grid-gutter-width / 2) + 1;
+		
+		@include media-breakpoint-down(sm) {
+			display: none;
+		}
 	}
 	
 	.vline-1 {
@@ -123,6 +133,10 @@ $element-size: 70px;
 		background: #000;
 		display: block;
 		top: ($element-size * 2) + ($element-size / 2) + ($grid-gutter-width * 2) + ($grid-gutter-width / 2);
+		
+		@include media-breakpoint-down(sm) {
+			display: none;
+		}
 	}
 	
 	.vline-connector-1 {
@@ -172,26 +186,39 @@ $element-size: 70px;
 			transition: $transition-base;
 		}
 		
-		&.inactive:after {
-			opacity: .5;
-		}
-		
-		&.active:after {
-			opacity: 0;
+		@include media-breakpoint-up(md) {
+			&.inactive:after {
+				opacity: .5;
+			}
+			
+			&.active:after {
+				opacity: 0;
+			}
 		}
 		
 		.popover {
 			border-radius: 4px;
 			display: none;
 			left: 50%;
-			position: absolute;
-			top: 100%;
-			width: 320px;
+			top: 50%;
+			width: 100%;
 			border-width: 3px 0 0 0;
 			border-color: $primary;
 			box-shadow: 0 8px 8px 0 rgba(#000, 0.15);
 			padding: 1rem;
-			transform: translate(-50%, 5%);
+			position: fixed;
+			transform: translate(-50%, -50%);
+			
+			@include media-breakpoint-up(md) {
+				top: 100%;
+				width: 320px;
+				transform: translate(-50%, 5%);
+				position: absolute;
+			}
+			
+			p {
+				font-weight: $font-weight-light;
+			}
 			
 			&.dark-blue {
 				border-color: $dark-blue;
@@ -237,4 +264,14 @@ $element-size: 70px;
 			}
 		}
 	}
+}
+
+.popover-mask {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: rgba(#000, .8);
 }

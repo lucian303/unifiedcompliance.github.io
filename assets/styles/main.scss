@@ -2,7 +2,36 @@
 ---
 
 @import "variables";
+
+// Frameworks, vendors, etc.
 @import "bootstrap/bootstrap.scss";
+@import "fontawesome/fontawesome.scss";
+@import "fontawesome/brands.scss";
+@import "fontawesome/regular.scss";
+@import "fontawesome/solid.scss";
+@import "fontawesome/light.scss";
+
+.swagger-ui {
+	//@import '~tachyons-sass/tachyons.scss';
+	@import 'swagger/mixins';
+	@import 'swagger/variables';
+	@import 'swagger/type';
+	@import 'swagger/layout';
+	@import 'swagger/buttons';
+	@import 'swagger/form';
+	@import 'swagger/modal';
+	@import 'swagger/models';
+	@import 'swagger/servers';
+	@import 'swagger/table';
+	@import 'swagger/topbar';
+	@import 'swagger/information';
+	@import 'swagger/authorize';
+	@import 'swagger/errors';
+	@include text_body();
+	@import 'swagger/split-pane-mode';
+	@import 'swagger/markdown';
+}
+
 @import "button";
 @import "typography";
 @import "global";

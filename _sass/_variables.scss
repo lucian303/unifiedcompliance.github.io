@@ -1,5 +1,9 @@
 $primary: #cd1e1e;
 $secondary: #29BABD;
+$info: #3e91f7;
+$warning: #D38042;
+$success: #10a54a;
+$danger: $primary;
 
 $blue: #0e7dc0;
 $dark-blue: #0d5d84;
@@ -9,8 +13,22 @@ $purple: #3c507c;
 $turquoise: #228282;
 $yellow: #e5aa25;
 
-$light: #fff;
-$dark: #000;
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000;
+
+$light: $white;
+$dark: $black;
+
+$body-color: $dark;
 
 // Typography
 
@@ -18,8 +36,13 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
 
 $font-weight-light: 300;
 $font-weight-normal: 400;
+$font-weight-bold: $font-weight-normal;
+$font-weight-bolder: $font-weight-bold;
 
 $font-size-base: 1rem;
+$font-size-sm: .875rem;
+$font-size-xs: .75rem;
+$font-size-xxs: .625rem;
 
 $h1-font-size: $font-size-base * 2.5;
 $h2-font-size: $font-size-base * 1.75;
@@ -28,7 +51,7 @@ $h4-font-size: $font-size-base * 1.25;
 $h5-font-size: $font-size-base * 1.125;
 $h6-font-size: $font-size-base;
 
-$headings-margin-bottom: 1.5rem;
+$headings-margin-bottom: 1rem;
 $paragraph-margin-bottom: 1rem;
 
 $link-decoration: none;
@@ -40,6 +63,15 @@ $letter-spacing: .08em;
 $grid-gutter-width: 40px;
 $spacer: 1rem;
 
+$spacers: (
+	1: $spacer,
+	2: $spacer * 2,
+	3: $spacer * 3,
+	4: $spacer * 4,
+	5: $spacer * 5,
+	6: $spacer * 6,
+);
+
 $grid-breakpoints: (
 	xs: 0,
 	sm: 768px,
@@ -49,8 +81,9 @@ $grid-breakpoints: (
 );
 
 $container-max-widths: (
-	md: 1000px,
-	lg: 1200px
+	md: 1100px,
+	lg: 1400px,
+	xl: 1600px
 );
 
 // Navbar
@@ -67,3 +100,29 @@ $border-color: #d8dadb;
 $border-radius: 0;
 $border-radius-lg: 0;
 $border-radius-sm: 0;
+
+// Code, pre, and similar
+
+$code-color: $body-color;
+$pre-color: $code-color;
+$kbd-color: $pre-color;
+
+// Fontawesome
+
+$fa-font-path: "/assets/fonts";
+$fa-font-size-base: $font-size-base;
+
+// Swagger
+
+$_color-post: $success;
+$_color-get: $info;
+$_color-put: $danger;
+$_color-delete: $danger;
+$_color-head: #9012fe;
+$_color-patch: $danger;
+$_color-disabled: #ebebeb;
+$_color-options: $success;
+
+$opblock-summary-method-background-color: $black;
+$opblock-summary-method-font-color: $white;
+$opblock-summary-method-text-shadow-color: transparent;
