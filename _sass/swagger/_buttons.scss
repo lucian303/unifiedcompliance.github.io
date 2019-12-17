@@ -1,0 +1,94 @@
+.btn {
+	@extend .btn;
+	@extend .btn-primary;
+	@extend .btn-sm;
+	
+	&.authorize {
+		line-height: 1;
+		display: inline;
+		color: $btn-authorize-font-color;
+		border-color: $btn-authorize-border-color;
+		background-color: $btn-authorize-background-color;
+		
+		span {
+			float: left;
+			padding: 4px 20px 0 0;
+		}
+		
+		svg {
+			fill: $btn-authorize-svg-fill-color;
+		}
+	}
+	
+	&.execute {
+		@extend .btn-info;
+	}
+}
+
+.btn-group {
+	display: flex;
+	padding: 30px;
+	
+	.btn {
+		flex: 1;
+		
+		&:first-child {
+			border-radius: 4px 0 0 4px;
+		}
+		
+		&:last-child {
+			border-radius: 0 4px 4px 0;
+		}
+	}
+}
+
+.authorization__btn {
+	padding: 0 10px;
+	border: none;
+	background: none;
+	
+	&.locked {
+		opacity: 1;
+	}
+	
+	&.unlocked {
+		opacity: .4;
+	}
+}
+
+.expand-methods,
+.expand-operation {
+	border: none;
+	background: none;
+	
+	svg {
+		width: 20px;
+		height: 20px;
+	}
+}
+
+.expand-methods {
+	padding: 0 10px;
+	
+	&:hover {
+		svg {
+			fill: $expand-methods-svg-fill-color-hover;
+		}
+	}
+	
+	svg {
+		transition: all .3s;
+		
+		fill: $expand-methods-svg-fill-color;
+	}
+}
+
+
+button {
+	cursor: pointer;
+	outline: none;
+	
+	&.invalid {
+		@include invalidFormElement();
+	}
+}

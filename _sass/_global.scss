@@ -5,13 +5,95 @@
 body {
 	margin: 0;
 	padding: 0;
+	background: url('../images/bg_img_full.png') top center no-repeat #fff fixed;
 }
 
 main {
-	background: url('../images/bg_img_full.png') top center no-repeat #fff;
-	
 	.container {
 		padding-top: $grid-gutter-width;
 		padding-bottom: $grid-gutter-width;
+	}
+}
+
+.table-of-contents {
+	padding-left: 0;
+	
+	li {
+		list-style-type: none;
+		padding-top: .75em;
+		padding-bottom: .75em;
+		border-bottom: 1px solid $border-color;
+		
+		&.has-caret {
+			> a {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: nowrap;
+				justify-content: space-between;
+				width: 100%;
+				align-items: center;
+				
+				&:after {
+					content: "\f107";
+					font-family: 'Font Awesome 5 Pro';
+					font-weight: 300;
+					color: $link-color;
+					transition: $transition-base;
+				}
+			}
+			
+			&.active {
+				> a {
+					color: $link-color;
+					
+					&:after {
+						//transform: rotate(180deg);
+					}
+				}
+				
+				> ul {
+					display: block;
+				}
+			}
+		}
+	}
+	
+	a {
+		display: block;
+		font-weight: $font-weight-light;
+		text-transform: uppercase;
+		color: $body-color;
+		letter-spacing: $letter-spacing;
+		
+		@include hover-focus {
+			color: $link-color;
+		}
+	}
+	
+	// Nested lists
+	ul {
+		padding-left: 1.5rem;
+		width: 100%;
+		
+		// TODO: Find solution to keep nested list expanded
+		// when on it or any pages under its parent
+		//display: none;
+		
+		li {
+			border: 0;
+			
+			&:first-child {
+				border-top: 0;
+			}
+			
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
+		
+		a {
+			text-transform: none;
+			letter-spacing: 0;
+		}
 	}
 }

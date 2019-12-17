@@ -1,0 +1,1 @@
+These are all of the Sass partials that come with Fontawesome Pro v5.7.1. You shouldn've have to make changes to any of these files. If anything, use Sass vars to override where applicable.
