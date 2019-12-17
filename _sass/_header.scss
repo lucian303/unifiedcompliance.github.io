@@ -35,54 +35,105 @@ header {
 		li {
 			border-top: 1px solid $border-color;
 			background: $light;
+			position: relative;
 		}
 		
 		@include media-breakpoint-up(md) {
 			margin: auto ($grid-gutter-width / 2) auto auto;
 			
-			li {
+			> li {
 				background: none;
 				border: 0;
 				
 				& + li {
 					margin-left: 1.5rem;
 				}
+				
+				> a.nav-link {
+					&:after {
+						content: '';
+						width: 100%;
+						height: 0;
+						background: $primary;
+						position: absolute;
+						left: 0;
+						bottom: -.5em;
+						transition: $transition-base;
+					}
+					
+					@include media-breakpoint-up(md) {
+						padding: 0 !important;
+						
+						&:hover,
+						&:focus {
+							&:after {
+								height: 3px;
+							}
+						}
+					}
+				}
 			}
 		}
 	}
 	
-	.nav-link {
+	.dropdown-toggle {
+		@include media-breakpoint-up(md) {
+			&:after {
+				border-top: 0;
+				margin-left: 0;
+			}
+		}
+	}
+	
+	.dropdown-menu {
+		margin: 0;
+		padding: 0;
+		
+		@include media-breakpoint-down(sm) {
+			border: 0;
+		}
+		
+		@include media-breakpoint-up(md) {
+			margin-top: 1rem;
+		}
+	}
+	
+	li.dropdown-item {
+		padding: 0;
+		
+		a.nav-link {
+			text-transform: none;
+			letter-spacing: 0;
+		}
+		
+		@include media-breakpoint-down(sm) {
+			&:not(:first-child) {
+				border: 0;
+			}
+		}
+		
+		@include media-breakpoint-up(md) {
+			&:first-child {
+				border-top: 0;
+			}
+			
+			a.nav-link {
+				padding: .5rem 1rem !important;
+			}
+		}
+	}
+	
+	a.nav-link {
 		letter-spacing: $letter-spacing;
 		text-transform: uppercase;
 		position: relative;
 		padding-top: .75rem;
 		padding-bottom: .75rem;
-		
-		&:after {
-			content: '';
-			width: 100%;
-			height: 0;
-			background: $primary;
-			position: absolute;
-			left: 0;
-			bottom: -.5em;
-			transition: $transition-base;
-		}
+		font-weight: $font-weight-light;
 		
 		@include media-breakpoint-down(sm) {
 			font-size: 1.25rem;
 			text-align: center;
-		}
-		
-		@include media-breakpoint-up(md) {
-			padding: 0 !important;
-			
-			&:hover,
-			&:focus {
-				&:after {
-					height: 3px;
-				}
-			}
 		}
 	}
 }
