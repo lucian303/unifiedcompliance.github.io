@@ -1,10 +1,20 @@
 title: "Unified Compliance Framework"
-main_navigation:
-    Education: "education.html"
-    Developer Docs: "https://developer.unifiedcompliance.com/"
-    Contributing: "contributing.html"
-    Join Slack: "mailto:dcougias@unifiedcompliance.com"
-    CCH: "https://commoncontrolshub.com/overview/"
+navigation:
+    -   title: "Education"
+        link: "/education"
+    -   title: "Docs"
+        link: ""
+        target: ""
+        sub:
+            -   title: "Developer Docs"
+                link: "https://developer.unifiedcompliance.com/"
+                target: "_blank"
+            -   title: "API Docs"
+                link: "/docs/"
+    -   title: "Contributing"
+        link: "/contributing"
+    -   title: "Join Slack"
+        link: "mailto:support@unifiedcompliace.com?subject=Please%20add%20me%20to%20Slack&body=I'd%20like%20to%20join%20your%20Slack%20discussion%20about%20the%20UCF%20API."
 
 sass:
     sass_dir: _sass
