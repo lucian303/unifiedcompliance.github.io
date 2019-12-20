@@ -6,11 +6,8 @@ navigation:
         link: ""
         target: ""
         sub:
-            -   title: "Developer Docs"
-                link: "https://developer.unifiedcompliance.com/"
-                target: "_blank"
-            -   title: "API Docs"
-                link: "/docs/"
+            -   title: "Common Controls Hub API"
+                link: "/docs/dev"
     -   title: "Contributing"
         link: "/contributing"
     -   title: "Join Slack"
